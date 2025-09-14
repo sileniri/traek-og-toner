@@ -2,7 +2,7 @@ import {useState} from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import Layout from "./Layout";
-import About from "./pages/about";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import Error from "./pages/404";
 import Contact from "./pages/Contact";
