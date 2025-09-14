@@ -1,5 +1,3 @@
-import Card from "../components/Card";
-
 export const desc = `
                 Træk & Toner er en basunkvartet der specialiserer sig i diverse musikstile. Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Illo ullam minima ab fugiat doloribus eveniet aperiam debitis
