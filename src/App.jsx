@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Error from "./pages/404";
 import Contact from "./pages/Contact";
+import Meet from "./pages/Meet";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/om",
+                path: "/om-os",
                 element: <About />,
+            },
+            {
+                path: "mød-os",
+                element: <Meet />,
             },
             {
                 path: "/kontakt",

@@ -8,8 +8,13 @@ export default function NavBar() {
             </NavLink>
             <ul>
                 <li>
-                    <NavLink to="/om" viewTransition>
+                    <NavLink to="/om-os" viewTransition>
                         Om os
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/mød-os" viewTransition>
+                        Mød os
                     </NavLink>
                 </li>
                 <li>
