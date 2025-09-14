@@ -1,0 +1,118 @@
+@layer base {
+    :root {
+        --clr-text: #eee;
+        --clr-bg: #222;
+        --clr-nav: #333;
+        --clr-link: rgb(170, 170, 255);
+    }
+
+    body {
+        background-color: var(--clr-bg);
+        color: var(--clr-text);
+        font-family: "Quicksand";
+    }
+    header {
+        background-color: var(--clr-nav);
+        position: sticky;
+        top: 0;
+    }
+
+    a {
+        color: var(--clr-link);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        max-width: 800px;
+        margin-inline: auto;
+
+        padding: 20px 0;
+    }
+
+    nav ul {
+        flex-grow: 1;
+        list-style: none;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    nav > a {
+        font-size: 2em;
+    }
+
+    nav a {
+        color: var(--clr-text);
+        text-decoration: none;
+    }
+
+    /* main {
+        display: grid;
+        grid-template-columns: 1fr [content-start] 900px [content-end] 1fr;
+    }
+
+    main > * {
+        grid-column: content;
+    } */
+
+    main > * {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
+    section:has(.about.card) {
+        margin-inline: auto;
+        max-width: 800px;
+    }
+
+    .about.card {
+        margin-block: 50px;
+        margin-inline: 5px;
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 1rem;
+
+        background-color: var(--clr-nav);
+
+        height: 500px;
+        overflow: clip;
+
+        border: var(--clr-nav) solid 2px;
+    }
+    .about.card:nth-child(odd) {
+        flex-direction: row;
+    }
+
+    .about.card > * {
+        flex: 1;
+    }
+
+    .about.card > .img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .about.card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about.card .text * {
+        margin: 40px;
+    }
+
+    .preview p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        overflow: clip;
+    }
+}
