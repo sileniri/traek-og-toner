@@ -73,18 +73,30 @@
         margin-block: 50px;
         margin-inline: 5px;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column-reverse;
         border-radius: 1rem;
+
+        height: 750px;
 
         background-color: var(--clr-nav);
 
-        height: 500px;
-        overflow: clip;
+        /* overflow: clip; */
 
         border: var(--clr-nav) solid 2px;
+
+        /* container-name: about-card; */
+        container-type: inline-size;
     }
-    .about.card:nth-child(odd) {
-        flex-direction: row;
+
+    @container (width > 550px) {
+        .about.card {
+            flex-direction: row-reverse;
+            height: 500px;
+        }
+
+        .about.card:nth-child(odd) {
+            flex-direction: row;
+        }
     }
 
     .about.card > * {

@@ -3,7 +3,7 @@ export default function Contact() {
         <main>
             <h1>Kontakt</h1>
             <div className="wrapper">
-                <a href="mailto:kontakt@gmail.com">kontakt@gmail.com</a>
+                <a href="mailto:basunister@gmail.com">basunister@gmail.com</a>
             </div>
         </main>
     );

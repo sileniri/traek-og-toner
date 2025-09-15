@@ -9,7 +9,7 @@ export default function Home() {
             <section className="preview" aria-labelledby="about-section-title">
                 <h2 id="about-section-title">Om os</h2>
                 <p>{desc}</p>
-                <Link to="/om" viewTransition>
+                <Link to="/om-os" viewTransition>
                     Læs mere
                 </Link>
             </section>
