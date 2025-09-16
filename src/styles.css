@@ -28,6 +28,8 @@
         flex-direction: row;
         align-items: center;
 
+        gap: 1rem;
+
         max-width: 800px;
         margin-inline: auto;
 
