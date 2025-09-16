@@ -10,13 +10,42 @@
         background-color: var(--clr-bg);
         color: var(--clr-text);
         font-family: "Quicksand";
+
+        min-height: 100vh;
+
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .wrapper {
+        max-width: 800px;
+        margin-inline: auto;
     }
 
     header {
-        background-color: var(--clr-nav);
+        --_animationStartsAfter: 0vh;
+        --_animationDistance: 100px;
+        --_surfaceColorStart: var(--clr-bg);
+        --_surfaceColorEnd: var(--clr-nav);
+        --_shadowStart: 0 0 0 0 #000;
+        --_shadowEnd: 0 0 15px 0 #000;
+
+        background-color: var(--_surfaceColorStart);
         position: sticky;
         top: 0;
-        border-bottom: 5px solid var(--clr-bg);
+        box-shadow: var(--_shadowStart);
+
+        animation: stickyNav linear forwards;
+        animation-timeline: view();
+        animation-range-start: calc(100vh + var(--_animationStartsAfter));
+        animation-range-end: calc(100vh + var(--_animationStartsAfter) + var(--_animationDistance));
+    }
+
+    @keyframes stickyNav {
+        100% {
+            background-color: var(--_surfaceColorEnd);
+            box-shadow: var(--_shadowEnd);
+        }
     }
 
     a {
@@ -54,15 +83,6 @@
         color: var(--clr-text);
         text-decoration: none;
     }
-
-    /* main {
-        display: grid;
-        grid-template-columns: 1fr [content-start] 900px [content-end] 1fr;
-    }
-
-    main > * {
-        grid-column: content;
-    } */
 
     main > * {
         max-width: 800px;

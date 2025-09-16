@@ -23,16 +23,18 @@ export default function Meet() {
     ];
 
     return (
-        <section>
-            {musicians.map((musician, index) => (
-                <Card
-                    key={index}
-                    name={musician.name}
-                    description={musician.description}
-                    imgAlt={musician.imgAlt || null}
-                    imgSrc={musician.imgSrc}
-                />
-            ))}
-        </section>
+        <main>
+            <section>
+                {musicians.map((musician, index) => (
+                    <Card
+                        key={index}
+                        name={musician.name}
+                        description={musician.description}
+                        imgAlt={musician.imgAlt || null}
+                        imgSrc={musician.imgSrc}
+                    />
+                ))}
+            </section>
+        </main>
     );
 }
