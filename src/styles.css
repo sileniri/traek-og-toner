@@ -24,7 +24,7 @@
 
     header {
         --_animationStartsAfter: 0vh;
-        --_animationDistance: 100px;
+        --_animationDistance: 75px;
         --_surfaceColorStart: var(--clr-bg);
         --_surfaceColorEnd: var(--clr-nav);
         --_shadowStart: 0 0 0 0 #000;
