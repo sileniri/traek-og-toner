@@ -16,7 +16,7 @@
         background-color: var(--clr-nav);
         position: sticky;
         top: 0;
-        border-bottom: 2px solid var(--clr-bg);
+        border-bottom: 5px solid var(--clr-bg);
     }
 
     a {
