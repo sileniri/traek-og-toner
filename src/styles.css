@@ -26,11 +26,8 @@
 
     header {
         --_animationStartsAfter: 0vh;
-<<<<<<< HEAD
         --_animationDistance: 250px;
-=======
         --_animationDistance: 75px;
->>>>>>> d8989d628636047352b3e121813b4b3c4f2dc184
         --_surfaceColorStart: var(--clr-bg);
         --_surfaceColorEnd: var(--clr-nav);
         --_shadowStart: 0 0 0 0 #000;
@@ -125,7 +122,7 @@
     @container (width > 550px) {
         .about.card {
             flex-direction: row-reverse;
-            height: 500px;
+            min-height: 500px;
         }
 
         .about.card:nth-child(odd) {
