@@ -26,7 +26,11 @@
 
     header {
         --_animationStartsAfter: 0vh;
+<<<<<<< HEAD
         --_animationDistance: 250px;
+=======
+        --_animationDistance: 75px;
+>>>>>>> d8989d628636047352b3e121813b4b3c4f2dc184
         --_surfaceColorStart: var(--clr-bg);
         --_surfaceColorEnd: var(--clr-nav);
         --_shadowStart: 0 0 0 0 #000;
@@ -55,11 +59,13 @@
     }
 
     nav {
+        --_linkGap: 0.5rem;
+
         display: flex;
         flex-direction: row;
         align-items: center;
 
-        gap: 1rem;
+        gap: var(--_linkGap);
 
         max-width: var(--content-width);
         margin-inline: auto;
@@ -74,7 +80,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        gap: 1rem;
+        gap: var(--_linkGap);
     }
 
     nav > a {
