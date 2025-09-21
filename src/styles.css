@@ -123,7 +123,7 @@
         background-size: cover;
         background-position: 50% 75%;
         padding-block: 6rem;
-        min-height: 80vh;
+        min-height: 80svh;
         position: relative;
         isolation: isolate;
         z-index: 0;
