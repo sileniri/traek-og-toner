@@ -6,7 +6,7 @@ export const desc = `
 
 export default function About() {
     return (
-        <main>
+        <main className="content-grid">
             <h1>Om os</h1>
             <article>
                 <h2></h2>

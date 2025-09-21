@@ -1,4 +1,31 @@
 @layer base {
+    .content-grid,
+    .full-width {
+        --_padding-inline: 2rem;
+        --_content-max-width: 75ch;
+        --_breakout-max-width: 85ch;
+
+        --_breakout-size: calc((var(--_breakout-max-width) - var(--_content-max-width)) / 2);
+
+        display: grid;
+        grid-template-columns:
+            [full-width-start] minmax(var(--_padding-inline), 1fr) [breakout-start] minmax(0, var(--_breakout-size)) [content-start] min(
+                100% - (var(--_padding-inline) * 2),
+                var(--_content-max-width)
+            )
+            [content-end] minmax(0, var(--_breakout-size)) [breakout-start] minmax(var(--_padding-inline), 1fr) [full-width-end];
+    }
+
+    :is(.content-grid, .full-width) > * {
+        grid-column: content;
+    }
+    :is(.content-grid, .full-width) > .breakout {
+        grid-column: breakout;
+    }
+    .content-grid > .full-width {
+        grid-column: full-width;
+    }
+
     :root {
         --clr-text: #eee;
         --clr-bg: #222;
@@ -17,11 +44,6 @@
 
         display: grid;
         grid-template-rows: auto 1fr auto;
-    }
-
-    .wrapper {
-        max-width: var(--content-width);
-        margin-inline: auto;
     }
 
     header {
@@ -60,13 +82,10 @@
         --_linkGap: 0.5rem;
 
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        /* align-items: center; */
 
         gap: var(--_linkGap);
-
-        max-width: var(--content-width);
-        margin-inline: auto;
 
         padding: 20px 0;
     }
@@ -77,7 +96,7 @@
 
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         gap: var(--_linkGap);
     }
 
@@ -90,9 +109,24 @@
         text-decoration: none;
     }
 
-    main > * {
-        max-width: var(--content-width);
-        margin-inline: auto;
+    /* main > * {
+    } */
+
+    .overlay {
+        border-width: 10px;
+        border-style: solid;
+        border-image-source: linear-gradient(hsl(0 0% 0% / 0.5) 0 0);
+        border-image-slice: fill 1;
+    }
+    section.hero {
+        background: url(/img/t-t.jpg) fixed;
+        background-size: cover;
+        background-position: 50% 75%;
+        padding-block: 6rem;
+        min-height: 80vh;
+        position: relative;
+        isolation: isolate;
+        z-index: 0;
     }
 
     section:has(.about.card) {
@@ -100,10 +134,7 @@
     }
 
     .about.card {
-        max-width: var(--content-width);
-        margin-inline: auto;
-
-        margin-block: 50px;
+        margin-bottom: 4rem;
         display: flex;
         flex-direction: column-reverse;
         border-radius: 1rem;
@@ -131,26 +162,28 @@
         }
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-        .about.card {
-            /* Default animation settings */
-            translate: 0 200px;
-            opacity: 0;
-            filter: blur(6px);
+    .about.card {
+        --index0: calc(var(--index) - 1); /* 0-based index */
+        --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+        --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
 
-            animation: reveal ease-out forwards;
-            animation-timeline: view();
-            animation-range-start: cover;
-            animation-range-end: contain;
-        }
+        /* Default animation settings */
+        translate: 0 200px;
+        opacity: 0;
+        filter: blur(6px);
 
-        @keyframes reveal {
-            100% {
-                translate: 0 0;
-                scale: 1;
-                opacity: 1;
-                filter: blur(0);
-            }
+        animation: reveal ease-out forwards;
+        animation-timeline: view();
+        animation-range-start: -10px;
+        animation-range-end: 75vh;
+    }
+
+    @keyframes reveal {
+        100% {
+            translate: 0 0;
+            scale: 1;
+            opacity: 1;
+            filter: blur(0);
         }
     }
 
@@ -176,5 +209,15 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         overflow: clip;
+    }
+
+    .preview:has(h2#meet-section-title) > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .preview:has(h2#meet-section-title) article {
+        padding: 2rem;
+        background-color: var(--clr-nav);
     }
 }
