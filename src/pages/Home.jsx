@@ -10,7 +10,7 @@ export default function Home() {
     };
     return (
         <main className="content-grid">
-            <section class="hero full-width overlay" aria-labelledby="hero-title">
+            <section className="hero full-width overlay" aria-labelledby="hero-title">
                 <h1>Træk & Toner</h1>
                 <p>
                     <TrimmedText text={desc} char={200} />

@@ -3,10 +3,12 @@ import {NavLink} from "react-router-dom";
 export default function NavBar() {
     return (
         <nav>
-            <NavLink to="/" viewTransition>
-                Træk & Toner
-            </NavLink>
             <ul>
+                <li>
+                    <NavLink to="/" viewTransition>
+                        Hjem
+                    </NavLink>
+                </li>
                 <li>
                     <NavLink to="/om-os" viewTransition>
                         Om os
