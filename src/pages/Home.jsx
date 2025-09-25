@@ -10,7 +10,7 @@ export default function Home() {
         return <>{trimText}&hellip;</>;
     };
     return (
-        <main className="content-grid">
+        <main className="content-grid" id="/main">
             <section className="hero full-width overlay" aria-labelledby="hero-title">
                 <h1>Træk og Toner</h1>
                 <p>

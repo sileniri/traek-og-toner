@@ -6,6 +6,18 @@
 }
 
 @layer base {
+    #skip-nav-link {
+        height: 0;
+        overflow: clip;
+        transition: all 250ms;
+
+        interpolate-size: allow-keywords;
+    }
+    #skip-nav-link:focus {
+        height: auto;
+        overflow: clip;
+    }
+
     .content-grid,
     .full-width {
         --_padding-inline: 2rem;
@@ -131,21 +143,28 @@
     /* main > * {
     } */
 
-    .overlay {
+    .overlay::before {
         border-image-source: linear-gradient(hsl(0 0% 0% / 0.5) 0 0);
         border-image-slice: fill 1;
     }
     section.hero {
-        background-image: url(/img/t-t.jpg);
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 75%;
         padding-block: 6rem;
         min-block-size: calc(80vh);
         position: relative;
         isolation: isolate;
         z-index: 0;
+        position: relative;
+    }
+    section.hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        top: -7rem;
+        background-image: url(/img/t-t.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 75%;
     }
     section.hero > * {
         translate: 0 108px;

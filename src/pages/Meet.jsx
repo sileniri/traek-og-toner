@@ -23,7 +23,7 @@ export const musicians = [
 
 export default function Meet() {
     return (
-        <main className="content-grid">
+        <main className="content-grid" id="/main">
             <section>
                 {musicians.map((musician, index) => (
                     <Card
