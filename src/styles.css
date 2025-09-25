@@ -1,3 +1,10 @@
+@layer reset {
+    html,
+    body {
+        scroll-behavior: auto;
+    }
+}
+
 @layer base {
     .content-grid,
     .full-width {
@@ -78,17 +85,18 @@
 
     site-header {
         font-size: 2rem;
-        /* display: var(--logoDisplay, block); */
+        height: var(--logoDisplay, auto);
+        overflow: clip;
     }
 
     @keyframes stickyNav {
         0%,
         100% {
-            --logoDisplay: none;
+            --logoDisplay: 0;
             background-color: var(--_surfaceColorEnd);
         }
         100% {
-            top: -55px;
+            top: 0;
             box-shadow: var(--_shadowEnd);
         }
     }
@@ -130,13 +138,13 @@
         border-image-slice: fill 1;
     }
     section.hero {
-        translate: 0 -111px;
-        background: url(/img/t-t.jpg) fixed;
+        background-image: url(/img/t-t.jpg);
+        background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
         padding-block: 6rem;
-        min-height: calc(80vh + 111px);
+        min-height: calc(80vh);
         position: relative;
         isolation: isolate;
         z-index: 0;
@@ -150,6 +158,7 @@
     }
 
     .about.card {
+        scroll-margin-top: 20rem;
         margin-bottom: 4rem;
         display: flex;
         flex-direction: column-reverse;
@@ -229,7 +238,7 @@
 
     .preview:has(h2#meet-section-title) > div {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min(217px, 100%), 1fr));
         gap: 2rem;
     }
     .preview:has(h2#meet-section-title) article {
