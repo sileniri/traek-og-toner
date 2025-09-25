@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer>
+        <footer className="content-grid">
             <div className="wrapper">
                 <p>
                     Kontakt: <a href="mailto:basunister@gmail.com">basunister@gmail.com</a>

@@ -4,7 +4,12 @@ export default function NavBar() {
     return (
         <nav>
             <ul>
-                <li>
+                <li className="logo-link">
+                    <NavLink to="/" viewTransition>
+                        Træk og Toner
+                    </NavLink>
+                </li>
+                <li className="home-link">
                     <NavLink to="/" viewTransition>
                         Hjem
                     </NavLink>
