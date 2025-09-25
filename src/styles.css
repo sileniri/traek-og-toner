@@ -72,12 +72,6 @@
         animation-range-start: calc(100vh + var(--_animationStartsAfter));
         animation-range-end: calc(100vh + var(--_animationStartsAfter) + var(--_animationDistance));
 
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-
-        gap: var(--_linkGap);
-
         padding: 20px 0;
 
         view-transition-name: header;
