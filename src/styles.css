@@ -149,7 +149,7 @@
     }
     section.hero {
         padding-block: 6rem;
-        min-block-size: calc(80vh);
+        min-block-size: calc(80svh);
         position: relative;
         isolation: isolate;
         z-index: 0;
