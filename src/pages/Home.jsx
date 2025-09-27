@@ -9,26 +9,27 @@ export default function Home() {
         trimText = trimText.substring(0, Math.min(trimText.length, trimText.lastIndexOf(" ")));
         return <>{trimText}&hellip;</>;
     };
+
     return (
         <main className="content-grid" id="/main">
-            <section className="hero full-width overlay" aria-labelledby="hero-title">
+            <section className="hero full-width" aria-labelledby="hero-title">
                 <h1>Træk og Toner</h1>
                 <p>
                     <TrimmedText text={desc} char={200} />
                 </p>
-                <Link to="/om-os" viewTransition>
+                <Link className="button" to="/om-os" viewTransition>
                     Læs mere
                 </Link>
             </section>
             <section className="preview" aria-labelledby="meet-section-title">
-                <h2 id="meet-section-title">Om os</h2>
+                <h2 id="meet-section-title">Mød os</h2>
                 <ul>
                     {musicians.map((musician, index) => (
                         <li key={index}>
                             <HashLink
                                 title={"Mød " + musician.name}
                                 to={"/mød-os/#/" + musician.name.toLowerCase().replaceAll(" ", "-")}
-                                style={{"--src": "url(" + musician.imgSrc + ")"}}
+                                style={{"--_delay": index * -1 + "s"}}
                                 viewTransition
                             >
                                 <h3>{musician.name}</h3>
@@ -37,9 +38,6 @@ export default function Home() {
                         </li>
                     ))}
                 </ul>
-                <Link to="/mød-os" viewTransition>
-                    Læs mere
-                </Link>
             </section>
         </main>
     );

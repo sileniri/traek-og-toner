@@ -1,15 +1,19 @@
+import {useEffect} from "react";
 import {NavLink} from "react-router-dom";
 
 export default function NavBar() {
+    useEffect(() => {
+        document.querySelectorAll("nav a").forEach((link) => {
+            link.addEventListener("click", (evt) => {
+                document.title = evt.target.innerText + " | Træk og Toner";
+            });
+        });
+    });
+
     return (
         <nav>
             <ul>
-                <li className="logo-link">
-                    <NavLink to="/" viewTransition>
-                        Træk og Toner
-                    </NavLink>
-                </li>
-                <li className="home-link">
+                <li>
                     <NavLink to="/" viewTransition>
                         Hjem
                     </NavLink>
