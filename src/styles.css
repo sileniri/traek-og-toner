@@ -240,7 +240,8 @@
         z-index: -1;
         background-image: url(/img/t-t.jpg);
         background-attachment: fixed;
-        background-size: cover;
+        background-size: 100% 100%;
+object-fit: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
         filter: brightness(0.4);
