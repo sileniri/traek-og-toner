@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import {desc} from "./About";
 import {musicians} from "./Meet";
+import {useEffect} from "react";
 
 export default function Home() {
     const TrimmedText = ({text, char}) => {
@@ -13,11 +14,11 @@ export default function Home() {
     return (
         <main className="content-grid" id="/main">
             <section className="hero full-width" aria-labelledby="hero-title">
-                <h1>Træk og Toner</h1>
-                <p>
+                <h1 style={{"--delay": "0"}}>Træk og Toner</h1>
+                <p style={{"--delay": "250"}}>
                     <TrimmedText text={desc} char={200} />
                 </p>
-                <Link className="button" to="/om-os" viewTransition>
+                <Link style={{"--delay": "500"}} className="button" to="/om-os" viewTransition>
                     Læs mere
                 </Link>
             </section>

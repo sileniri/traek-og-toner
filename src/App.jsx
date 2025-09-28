@@ -33,6 +33,30 @@ const router = createBrowserRouter([
     },
 ]);
 
+const updateTitle = () => {
+    let docTitle;
+    docTitle = decodeURI(document.location.pathname).toString();
+    docTitle = docTitle.replace("-", " ");
+    docTitle = docTitle.replace("/", "");
+    console.log(docTitle);
+    docTitle = docTitle.charAt(0).toUpperCase() + docTitle.slice(1);
+    docTitle ? (docTitle = docTitle) : (docTitle = "Hjem");
+    document.title = docTitle + " | Træk og Toner";
+};
+
+window.addEventListener("load", () => {
+    updateTitle();
+    let oldHref = document.location.href;
+    const body = document.querySelector("body");
+    const observer = new MutationObserver((mutations) => {
+        if (oldHref !== document.location.href) {
+            oldHref = document.location.href;
+            updateTitle();
+        }
+    });
+    observer.observe(body, {childList: true, subtree: true});
+});
+
 export default function App() {
     return (
         <>

@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+
 export const desc = `
                 Træk og Toner er en basunkvartet der specialiserer sig i diverse musikstile. Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Illo ullam minima ab fugiat doloribus eveniet aperiam debitis
