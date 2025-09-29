@@ -241,7 +241,6 @@
         background-image: url(/img/t-t.jpg);
         background-attachment: fixed;
         background-size: cover;
-object-fit: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
         filter: brightness(0.4);
