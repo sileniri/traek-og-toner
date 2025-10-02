@@ -46,13 +46,20 @@
         gap: var(--_linkGap);
     }
 
-    nav > a {
-        font-size: 2em;
-    }
-
     nav a {
         color: var(--clr-text);
         text-decoration: none;
+        position: relative;
+    }
+    nav a.active::after {
+        content: "";
+        position: absolute;
+        background-color: var(--clr-text);
+        inset: 0;
+        top: 100%;
+        bottom: -10%;
+        border-radius: 100vh;
+        view-transition-name: activeLink;
     }
 
     main {
