@@ -15,9 +15,7 @@ export default function Home() {
         <main className="content-grid" id="/main">
             <section className="hero full-width" aria-labelledby="hero-title">
                 <h1 style={{"--delay": "0"}}>Træk og Toner</h1>
-                <p style={{"--delay": "250"}}>
-                    <TrimmedText text={desc} char={200} />
-                </p>
+                <p style={{"--delay": "250"}}>{desc}</p>
                 <Link style={{"--delay": "500"}} className="button" to="/om-os" viewTransition>
                     Læs mere
                 </Link>
@@ -27,15 +25,21 @@ export default function Home() {
                 <ul>
                     {musicians.map((musician, index) => (
                         <li key={index}>
-                            <HashLink
-                                title={"Mød " + musician.name}
-                                to={"/mød-os/#/" + musician.name.toLowerCase().replaceAll(" ", "-")}
-                                style={{"--_delay": index * -1 + "s"}}
-                                viewTransition
+                            <div
+                                className="musician-preview"
+                                style={{"--_delay": index * -1 + "s", "--_src": `url(${musician.imgSrc})`}}
                             >
-                                <h3>{musician.name}</h3>
-                                <img src={musician.imgSrc} alt={musician.imgAlt} />
-                            </HashLink>
+                                <div className="content">
+                                    <h3>{musician.name}</h3>
+                                    <HashLink
+                                        to={"/mød-os/#/" + musician.name.toLowerCase().replaceAll(" ", "-")}
+                                        className="button"
+                                        viewTransition
+                                    >
+                                        Mød {musician.name.split(" ")[0]}
+                                    </HashLink>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
