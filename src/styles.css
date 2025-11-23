@@ -77,9 +77,9 @@
         }
     }
 
-    section {
+    /* section {
         margin-block-end: 5rem;
-    }
+    } */
     .about.card {
         scroll-margin-top: 20rem;
         margin-block-end: 4rem;
@@ -158,7 +158,7 @@
     #meet-section-title + ul {
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(27.5ch, 100%), 1fr));
         gap: 2rem;
     }
     .musician-preview {
@@ -186,7 +186,7 @@
         position: relative;
         isolation: isolate;
         overflow: clip;
-        transition: all 1s;
+        transition: all 600ms;
     }
     .musician-preview .content {
         display: flex;
@@ -196,7 +196,7 @@
         gap: 2rem;
         translate: 0 5rem;
         isolation: isolate;
-        transition: all 300ms 200ms;
+        transition: all 300ms 300ms;
     }
     .musician-preview .content::after {
         content: "";
@@ -207,6 +207,8 @@
     }
 
     .musician-preview .content h3 {
+        flex-basis: 0;
+        width: fit-content;
         text-align: center;
         position: relative;
     }
@@ -223,11 +225,10 @@
     }
     .musician-preview:hover .content h3::after {
         translate: 0 0;
-        transition: all 300ms 200ms;
+        transition: all 300ms 300ms;
     }
     .musician-preview:hover {
         border: var(--clr-text) solid 3px;
-        transition: all 0.5s;
     }
     .musician-preview:hover .content {
         translate: 0 0;
@@ -237,6 +238,11 @@
     footer {
         background-color: var(--clr-nav);
         padding: 1rem 2rem;
+    }
+
+    footer div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -272,7 +278,7 @@
     section.hero {
         padding-block-end: 10rem;
         min-block-size: 80svh;
-        isolation: isolate;
+        /* isolation: isolate; */
         position: relative;
         align-content: end;
     }
@@ -300,12 +306,41 @@
         top: -7rem;
         z-index: -1;
         background-image: url(/img/t-t.jpg);
-        background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
         filter: brightness(0.4);
+        animation: parallax linear;
+        animation-timeline: scroll();
     }
+    @keyframes parallax {
+        to {
+            translate: 0 500px;
+        }
+    }
+    section.hero::after {
+        content: "south";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        translate: 0 50%;
+        z-index: 3;
+        text-align: center;
+        place-content: end;
+        font-family: "Material Symbols Rounded";
+        font-size: 3rem;
+        animation: blink 2s infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     section:has(.about.card) {
         --_cardPadding: 40px;
     }
@@ -330,6 +365,12 @@
         inline-size: 100%;
         block-size: 100%;
         object-fit: cover;
+    }
+
+    .preview {
+        padding-top: 5rem;
+        z-index: 2;
+        background-color: var(--clr-bg);
     }
 
     .about.card .text div {

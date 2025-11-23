@@ -20,7 +20,7 @@ export default function Home() {
                     Læs mere
                 </Link>
             </section>
-            <section className="preview" aria-labelledby="meet-section-title">
+            <section className="preview full-width" aria-labelledby="meet-section-title">
                 <h2 id="meet-section-title">Mød os</h2>
                 <ul>
                     {musicians.map((musician, index) => (
