@@ -368,7 +368,7 @@
     }
 
     .preview {
-        padding-top: 5rem;
+        padding-block: 5rem;
         z-index: 2;
         background-color: var(--clr-bg);
     }
