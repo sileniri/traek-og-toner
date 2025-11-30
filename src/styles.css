@@ -112,13 +112,16 @@
     .button {
         color: var(--clr-text);
         text-decoration: none;
-        border: var(--clr-nav) 5px solid;
+        border-color: var(--clr-text);
+        border-width: 2px;
+        border-style: solid;
         width: fit-content;
         padding: 0.5rem 1rem;
         border-radius: 100vh;
         overflow: clip;
         position: relative;
         isolation: isolate;
+        transition: border-color 300ms ease, border-width 300ms ease;
     }
     .button::after,
     .button::before {
@@ -139,9 +142,13 @@
         transform-origin: bottom;
         transition: scale 300ms ease;
     }
-    .button:hover::before {
-        transform-origin: top;
-        scale: 1 1;
+    .button:hover {
+        border-color: var(--clr-nav);
+        /* border-width: 5px; */
+        &::before {
+            transform-origin: top;
+            scale: 1 1;
+        }
     }
 
     h1,
@@ -305,7 +312,7 @@
         inset: 0;
         top: -7rem;
         z-index: -1;
-        background-image: url(/img/t-t.jpg);
+        background-image: url(/img/t-t.jpg), url(/img/t-t_s.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
