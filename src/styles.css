@@ -317,14 +317,26 @@
         background-repeat: no-repeat;
         background-position: 50% 75%;
         filter: brightness(0.4);
-        animation: parallax linear;
-        animation-timeline: scroll();
+        animation: parallax linear, fade ease 5s;
+        animation-timeline: scroll(), auto;
     }
     @keyframes parallax {
         to {
             translate: 0 500px;
         }
     }
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     section.hero::after {
         content: "south";
         position: absolute;
