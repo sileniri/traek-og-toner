@@ -81,9 +81,6 @@
         margin-block-end: 5rem;
     } */
     .about.card {
-        position: sticky;
-        top: 2rem;
-
         scroll-margin-top: 20rem;
         margin-block-end: 4rem;
         display: flex;
