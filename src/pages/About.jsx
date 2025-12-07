@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 
 export const desc = `
-                Træk og Toner er en basunkvartet der specialiserer sig i diverse musikstile. Lorem ipsum dolor sit
+                Træk og Toner... Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Illo ullam minima ab fugiat doloribus eveniet aperiam debitis
                 tempore, error laboriosam culpa aliquid vitae dolore nobis dignissimos quis modi! Cupiditate,
                 quisquam fugiat possimus impedit mollitia provident odio neque delectus repudiandae et?`;
