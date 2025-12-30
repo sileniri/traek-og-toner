@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 448 448"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="instagram.svg"
+   width="448"
+   height="448"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.57226563"
+     inkscape:cx="200.95563"
+     inkscape:cy="347.74061"
+     inkscape:window-width="1440"
+     inkscape:window-height="830"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     d="m 223.925,109.175 a 115.00039,115.00039 0 1 0 -0.6,230 115.00039,115.00039 0 1 0 0.6,-230 z m -0.6,40.4 a 74.600603,74.600603 0 1 1 0.6,149.2 74.600603,74.600603 0 1 1 -0.6,-149.2 z m 93.4,-45.1 a 26.8,26.8 0 1 1 53.6,0 26.8,26.8 0 1 1 -53.6,0 z m 129.7,27.2 c -1.7,-35.9 -9.9,-67.7 -36.2,-93.9 -26.2,-26.2 -58,-34.4 -93.9,-36.2 -37,-2.1 -147.9,-2.1 -184.9,0 -35.8,1.7 -67.6,9.9 -93.9,36.1 -26.3,26.2 -34.4,58 -36.2,93.9 -2.1,37 -2.1,147.9 0,184.9 1.7,35.9 9.9,67.7 36.2,93.9 26.3,26.2 58,34.4 93.9,36.2 37,2.1 147.9,2.1 184.9,0 35.9,-1.7 67.7,-9.9 93.9,-36.2 26.2,-26.2 34.4,-58 36.2,-93.9 2.1,-37 2.1,-147.8 0,-184.8 z m -47.8,224.5 c -7.8,19.6 -22.9,34.7 -42.6,42.6 -29.5,11.7 -99.5,9 -132.1,9 -32.6,0 -102.7,2.6 -132.1,-9 -19.6,-7.8 -34.7,-22.9 -42.6,-42.6 -11.7,-29.5 -9,-99.5 -9,-132.1 0,-32.6 -2.6,-102.7 9,-132.1 7.8,-19.6 22.9,-34.7 42.6,-42.6 29.5,-11.7 99.5,-9 132.1,-9 32.6,0 102.7,-2.6 132.1,9 19.6,7.8 34.7,22.9 42.6,42.6 11.7,29.5 9,99.5 9,132.1 0,32.6 2.7,102.7 -9,132.1 z"
+     id="path1"
+     style="fill:#eee;fill-opacity:1" />
+</svg>

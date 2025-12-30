@@ -1,8 +1,9 @@
+import {useEffect, useRef, useState} from "react";
+
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import {desc} from "./About";
 import {musicians} from "./Meet";
-import {useEffect} from "react";
 
 export default function Home() {
     const TrimmedText = ({text, char}) => {
@@ -26,7 +27,7 @@ export default function Home() {
                     {musicians.map((musician, index) => (
                         <li key={index}>
                             <div
-                                className="musician-preview"
+                                className={"musician-preview"}
                                 style={{"--_delay": index * -1 + "s", "--_src": `url(${musician.imgSrc})`}}
                             >
                                 <div className="content">

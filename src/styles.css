@@ -243,13 +243,24 @@
     }
 
     footer {
-        background-color: var(--clr-nav);
+        --_clr: var(--clr-nav);
+
+        background-color: var(--_clr);
         padding: 1rem 2rem;
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 1rem;
+
+            margin-top: 1rem;
+        }
     }
 
-    footer div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
     }
 }
 
@@ -282,12 +293,18 @@
         grid-column: full-width;
     }
 
+    .entered {
+        animation: load 2s 2s forwards;
+    }
+
     section.hero {
         padding-block-end: 10rem;
         min-block-size: 80svh;
         /* isolation: isolate; */
         position: relative;
         align-content: end;
+
+        overflow-x: clip;
     }
     section.hero h1 {
         margin-block-end: 2rem;
@@ -312,12 +329,16 @@
         inset: 0;
         top: -7rem;
         z-index: -1;
-        background-image: url(/img/t-t.jpg), url(/img/t-t_s.jpg);
+        background-image: radial-gradient(transparent, oklch(from var(--clr-bg) l c h / 50%)),
+            linear-gradient(oklch(from var(--clr-bg) l c h / 50%) 0 0), url(/img/t-t.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;
-        filter: brightness(0.4);
-        animation: parallax linear, fade ease 5s;
+
+        opacity: 0;
+        scale: 1.2;
+
+        animation: parallax linear, load 2s 2s forwards;
         animation-timeline: scroll(), auto;
     }
     @keyframes parallax {
@@ -325,15 +346,15 @@
             translate: 0 500px;
         }
     }
-    @keyframes fade {
-        0% {
+
+    @keyframes load {
+        from {
             opacity: 0;
+            scale: 1.2;
         }
-        50% {
-            opacity: 0;
-        }
-        100% {
+        to {
             opacity: 1;
+            scale: 1;
         }
     }
 
@@ -405,6 +426,33 @@
             opacity: 1;
             filter: blur(0);
         }
+    }
+
+    /* .social-media {
+        max-width: 20px;
+    } */
+
+    .icon {
+        display: block;
+        aspect-ratio: 1;
+
+        height: 50px;
+        aspect-ratio: 1;
+
+        background-image: var(--_icon-src);
+        background-size: 100%;
+
+        position: relative;
+    }
+
+    .hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 }
 
