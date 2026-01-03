@@ -45,6 +45,8 @@ const updateTitle = () => {
 };
 
 window.addEventListener("load", () => {
+    console.log("SITE MADE WITH LOVE BY SIGUR LEO NIILAS RINNAN");
+
     updateTitle();
     let oldHref = document.location.href;
     const body = document.querySelector("body");

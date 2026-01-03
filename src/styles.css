@@ -254,13 +254,18 @@
             row-gap: 1rem;
 
             margin-top: 1rem;
+
+            :nth-child(2n) {
+                place-self: end;
+            }
         }
     }
 
     .logo {
-        font-size: 2rem;
+        width: 100%;
+        fill: currentColor;
         font-weight: bold;
-        text-align: center;
+        display: block;
     }
 }
 
