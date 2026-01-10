@@ -253,6 +253,8 @@
             grid-template-columns: repeat(2, 1fr);
             row-gap: 1rem;
 
+            overflow: hidden;
+
             margin-top: 1rem;
 
             :nth-child(2n) {
@@ -265,7 +267,10 @@
         width: 100%;
         fill: currentColor;
         font-weight: bold;
-        display: block;
+        display: flex;
+        font-size: clamp(1.5rem, 5vw, 5rem);
+        /* font-size: 1.5rem; */
+        justify-content: space-between;
     }
 }
 
