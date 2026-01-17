@@ -40,7 +40,7 @@
         --_linkGap: 0.5rem;
 
         --_animationStartsAfter: 75px;
-        --_animationDistance: 250px;
+        --_animationDistance: 27.5ch;
         --_surfaceColorStart: transparent;
         --_surfaceColorEnd: var(--clr-nav);
         --_shadowStart: 0 0 0 0 #000;
