@@ -39,8 +39,8 @@
     header {
         --_linkGap: 0.5rem;
 
-        --_animationStartsAfter: 111px;
-        --_animationDistance: 100px;
+        --_animationStartsAfter: 75px;
+        --_animationDistance: 250px;
         --_surfaceColorStart: transparent;
         --_surfaceColorEnd: var(--clr-nav);
         --_shadowStart: 0 0 0 0 #000;
@@ -48,7 +48,7 @@
 
         background-color: var(--_surfaceColorStart);
         position: sticky;
-        top: -111px;
+        top: -100px;
         box-shadow: var(--_shadowStart);
         z-index: 100;
 
