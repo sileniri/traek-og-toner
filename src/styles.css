@@ -9,7 +9,7 @@
     :root {
         --clr-text: #eee;
         --clr-bg: #222;
-        --clr-nav: hsl(0, 0%, 23.5%);
+        --clr-nav: #3c3c3c;
         /* --clr-nav: #444; */
         --clr-link: rgb(170, 170, 255);
     }
@@ -36,31 +36,70 @@
         letter-spacing: -0.01em;
     }
 
-    nav ul {
-        flex-grow: 1;
-        list-style: none;
+    header {
+        --_linkGap: 0.5rem;
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--_linkGap);
-    }
+        --_animationStartsAfter: 111px;
+        --_animationDistance: 100px;
+        --_surfaceColorStart: transparent;
+        --_surfaceColorEnd: var(--clr-nav);
+        --_shadowStart: 0 0 0 0 #000;
+        --_shadowEnd: 0 0 15px 0 #000;
 
-    nav a {
-        color: var(--clr-text);
-        text-decoration: none;
-        position: relative;
+        background-color: var(--_surfaceColorStart);
+        position: sticky;
+        top: -111px;
+        box-shadow: var(--_shadowStart);
+        z-index: 100;
+
+        animation: stickyNav linear forwards;
+        animation-timeline: view();
+        animation-range-start: calc(100vh + var(--_animationStartsAfter));
+        animation-range-end: calc(100vh + var(--_animationStartsAfter) + var(--_animationDistance));
+
+        padding: 20px 0;
+
+        view-transition-name: header;
+
+        &:hover :not(:hover) {
+            color: hsl(from var(--clr-text) h s l / 0.5);
+        }
     }
-    nav a.active::after {
-        content: "";
-        position: absolute;
-        background-color: var(--clr-text);
-        inset: 0;
-        top: 110%;
-        bottom: -20%;
-        border-radius: 100vh;
-        view-transition-name: activeLink;
+    nav {
+        container-name: navbar;
+        container-type: inline-size;
+        ul {
+            flex-grow: 1;
+            list-style: none;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--_linkGap);
+
+            li {
+                flex-grow: 1;
+            }
+        }
+
+        a {
+            width: 100%;
+            color: var(--clr-text);
+            text-decoration: none;
+            position: relative;
+            transition: color 500ms;
+            &.active::after {
+                content: "";
+                position: absolute;
+                background-color: var(--clr-text);
+                inset: 0;
+                top: 110%;
+                bottom: -20%;
+                border-radius: 100vh;
+                view-transition-name: activeLink;
+            }
+        }
     }
 
     main {
@@ -241,12 +280,19 @@
         translate: 0 0;
         transition: all 250ms;
     }
+    @keyframes wave {
+        to {
+            /* translate: 50% 0; */
+            background-position: left min(calc(100% + 50rem), 1000px) bottom;
+        }
+    }
 
     footer {
+        position: relative;
+        padding: 1.25rem 0;
         --_clr: var(--clr-nav);
 
         background-color: var(--_clr);
-        padding: 1rem 2rem;
 
         .wrapper {
             display: grid;
@@ -268,7 +314,7 @@
         fill: currentColor;
         font-weight: bold;
         display: flex;
-        font-size: clamp(1.5rem, 5vw, 5rem);
+        font-size: clamp(1.5rem, 10vw, 5rem);
         /* font-size: 1.5rem; */
         justify-content: space-between;
     }
@@ -467,32 +513,6 @@
 }
 
 @layer misc {
-    header {
-        --_linkGap: 0.5rem;
-
-        --_animationStartsAfter: 111px;
-        --_animationDistance: 100px;
-        --_surfaceColorStart: transparent;
-        --_surfaceColorEnd: var(--clr-nav);
-        --_shadowStart: 0 0 0 0 #000;
-        --_shadowEnd: 0 0 15px 0 #000;
-
-        background-color: var(--_surfaceColorStart);
-        position: sticky;
-        top: -111px;
-        box-shadow: var(--_shadowStart);
-        z-index: 100;
-
-        animation: stickyNav linear forwards;
-        animation-timeline: view();
-        animation-range-start: calc(100vh + var(--_animationStartsAfter));
-        animation-range-end: calc(100vh + var(--_animationStartsAfter) + var(--_animationDistance));
-
-        padding: 20px 0;
-
-        view-transition-name: header;
-    }
-
     @keyframes stickyNav {
         0%,
         100% {

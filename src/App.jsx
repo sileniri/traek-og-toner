@@ -45,7 +45,7 @@ const updateTitle = () => {
 };
 
 window.addEventListener("load", () => {
-    console.log("SITE MADE WITH LOVE BY SIGUR LEO NIILAS RINNAN");
+    console.log("En hjemmeside af SIGUR LEO NIILAS RINNAN");
 
     updateTitle();
     let oldHref = document.location.href;
