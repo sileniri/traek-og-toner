@@ -1,10 +1,7 @@
 import {useEffect} from "react";
 
 export const desc = `
-                Træk og Toner... Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Illo ullam minima ab fugiat doloribus eveniet aperiam debitis
-                tempore, error laboriosam culpa aliquid vitae dolore nobis dignissimos quis modi! Cupiditate,
-                quisquam fugiat possimus impedit mollitia provident odio neque delectus repudiandae et?`;
+                Os i Træk og Toner er en ny, ung og velklingende basunkvartet, som spiller alt fra klassisk til moderne musik. Vores kvartet kan bookes i mange forskellige sammenhænge. Om det er til Sølvbryllupper, festlige arrangementer, kirkekoncerter eller underholdning, så har vi det perfekte musik til den begivenhed, du ønsker.`;
 
 export default function About() {
     return (
