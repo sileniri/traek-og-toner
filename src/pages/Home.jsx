@@ -12,9 +12,18 @@ export default function Home() {
         return <>{trimText}&hellip;</>;
     };
 
+    useEffect(() => {
+        const bgImg = new Image();
+        bgImg.src = "/img/t-t.jpg";
+        bgImg.onload = () => {
+            console.log("YAY");
+            document.querySelector("section.hero").classList.remove("loading");
+        };
+    }, []);
+
     return (
         <main className="content-grid" id="/main">
-            <section className="hero full-width" aria-labelledby="hero-title">
+            <section className="hero full-width loading" aria-labelledby="hero-title">
                 <h1 style={{"--delay": "0"}}>Træk og Toner</h1>
                 <p style={{"--delay": "250"}}>{desc}</p>
                 <Link style={{"--delay": "500"}} className="button" to="/om-os" viewTransition>

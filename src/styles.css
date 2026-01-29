@@ -379,7 +379,7 @@
         animation: onload 1s ease-out backwards;
         animation-delay: calc(1ms * var(--delay));
     }
-    section.hero::before {
+    section.hero:not(.loading):before {
         content: "";
         position: absolute;
         inset: 0;
@@ -394,7 +394,7 @@
         opacity: 0;
         scale: 1.2;
 
-        animation: parallax linear, load 2s 2s forwards;
+        animation: parallax linear, load 2s 0.5s forwards;
         animation-timeline: scroll(), auto;
     }
     @keyframes parallax {
