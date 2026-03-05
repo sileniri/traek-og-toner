@@ -208,6 +208,8 @@
         gap: 2rem;
     }
     .musician-preview {
+        --_transition-duration: 200ms;
+
         min-height: 25rem;
         padding: 2rem;
 
@@ -232,7 +234,7 @@
         position: relative;
         isolation: isolate;
         overflow: clip;
-        transition: all 500ms;
+        transition: all calc(var(--_transition-duration) * 2);
     }
     .musician-preview .content {
         display: flex;
@@ -242,7 +244,7 @@
         gap: 2rem;
         translate: 0 5rem;
         isolation: isolate;
-        transition: all 250ms 250ms;
+        transition: all var(--_transition-duration) var(--_transition-duration);
     }
     .musician-preview .content::after {
         content: "";
@@ -267,18 +269,18 @@
         border-radius: 100vh;
         translate: -150% 0;
         background-color: var(--clr-text);
-        transition: all 250ms;
+        transition: all var(--_transition-duration);
     }
     .musician-preview:hover .content h3::after {
         translate: 0 0;
-        transition: all 250ms 250ms;
+        transition: all var(--_transition-duration) calc(var(--_transition-duration) * 0.5);
     }
     .musician-preview:hover {
         border: var(--clr-text) solid 3px;
     }
     .musician-preview:hover .content {
         translate: 0 0;
-        transition: all 250ms;
+        transition: all var(--_transition-duration);
     }
     @keyframes wave {
         to {
