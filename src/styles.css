@@ -202,15 +202,25 @@
         margin-block-end: 1rem;
     }
     #meet-section-title + ul {
+        --_grid-max-col-count: 2;
+        --_grid-min-col-size: 27.5ch;
+        --_grid-gap: 2rem;
+
+        /* DO NOT TOUCH!! */
+        --_grid-col-size-calc: calc(
+            (100% - var(--_grid-gap) * (var(--_grid-max-col-count) - 1)) / var(--_grid-max-col-count)
+        );
+        --_grid-col-min-size-calc: min(max(var(--_grid-min-col-size), var(--_grid-col-size-calc)), 100%);
+
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(27.5ch, 100%), 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(var(--_grid-col-size-calc), 1fr));
+        gap: var(--_grid-gap);
     }
     .musician-preview {
         --_transition-duration: 200ms;
 
-        min-height: 25rem;
+        min-height: 30rem;
         padding: 2rem;
 
         border-radius: 1rem;
@@ -271,21 +281,18 @@
         background-color: var(--clr-text);
         transition: all var(--_transition-duration);
     }
-    .musician-preview:hover .content h3::after {
-        translate: 0 0;
-        transition: all var(--_transition-duration) calc(var(--_transition-duration) * 0.5);
-    }
-    .musician-preview:hover {
+    .musician-preview:hover,
+    .musician-preview:focus-within {
         border: var(--clr-text) solid 3px;
-    }
-    .musician-preview:hover .content {
-        translate: 0 0;
-        transition: all var(--_transition-duration);
-    }
-    @keyframes wave {
-        to {
-            /* translate: 50% 0; */
-            background-position: left min(calc(100% + 50rem), 1000px) bottom;
+
+        .content {
+            translate: 0 0;
+            transition: all var(--_transition-duration);
+
+            h3::after {
+                translate: 0 0;
+                transition: all var(--_transition-duration) calc(var(--_transition-duration) * 0.5);
+            }
         }
     }
 
@@ -326,8 +333,8 @@
     .content-grid,
     .full-width {
         --_padding-inline: 2rem;
-        --_content-max-width: 75ch;
-        --_breakout-max-width: 85ch;
+        --_content-max-width: 90ch;
+        --_breakout-max-width: 100ch;
 
         --_breakout-size: calc((var(--_breakout-max-width) - var(--_content-max-width)) / 2);
 
@@ -360,35 +367,38 @@
         min-block-size: 80svh;
         /* isolation: isolate; */
         position: relative;
-        align-content: end;
+        align-content: center;
 
         overflow-x: clip;
     }
     section.hero h1 {
-        margin-block-end: 2rem;
-    }
-    section.hero p {
-        --_lines: 1;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: var(--_lines); /* number of lines to show */
-        line-clamp: var(--_lines);
-        -webkit-box-orient: vertical;
-
-        margin-block-end: 1rem;
+        font-size: clamp(1.5rem, 10vw, 7rem);
+        text-transform: uppercase;
+        font-weight: lighter;
+        text-align: center;
+        white-space: nowrap;
     }
     section.hero > * {
         animation: onload 1s ease-out backwards;
-        animation-delay: calc(1ms * var(--delay));
+        animation-delay: calc(1ms * var(--delay, 0ms));
     }
     section.hero:not(.loading):before {
+        --_opacity: 0%;
+
+        --_vignette-size: max(25rem, 50%);
+        --_vignette-amount: 50%;
+
         content: "";
         position: absolute;
         inset: 0;
-        top: -7rem;
+        top: -100px;
         z-index: -1;
-        background-image: radial-gradient(transparent, oklch(from var(--clr-bg) l c h / 50%)),
-            linear-gradient(oklch(from var(--clr-bg) l c h / 50%) 0 0), url(/img/t-t.jpg);
+        background-image: radial-gradient(
+                circle,
+                transparent var(--_vignette-size),
+                oklch(from var(--clr-bg) l c h / var(--_vignette-amount))
+            ),
+            linear-gradient(oklch(from var(--clr-bg) l c h / var(--_opacity)) 0 0), var(--_src);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 75%;

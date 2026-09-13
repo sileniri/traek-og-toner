@@ -2,7 +2,6 @@ import {useEffect, useRef, useState} from "react";
 
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
-import {desc} from "./About";
 import {musicians} from "./Meet";
 
 export default function Home() {
@@ -12,9 +11,11 @@ export default function Home() {
         return <>{trimText}&hellip;</>;
     };
 
+    const groupImgSrc = "/img/t-t.webp";
+
     useEffect(() => {
         const bgImg = new Image();
-        bgImg.src = "/img/t-t.jpg";
+        bgImg.src = groupImgSrc;
         bgImg.onload = () => {
             console.log("YAY");
             document.querySelector("section.hero").classList.remove("loading");
@@ -23,12 +24,12 @@ export default function Home() {
 
     return (
         <main className="content-grid" id="/main">
-            <section className="hero full-width loading" aria-labelledby="hero-title">
-                <h1 style={{"--delay": "0"}}>Træk og Toner</h1>
-                <p style={{"--delay": "250"}}>{desc}</p>
-                <Link style={{"--delay": "500"}} className="button" to="/om-os" viewTransition>
-                    Læs mere
-                </Link>
+            <section
+                className="hero full-width loading"
+                aria-labelledby="hero-title"
+                style={{"--_src": `url(${groupImgSrc})`}}
+            >
+                <h1 id="hero-title">Træk og Toner</h1>
             </section>
             <section className="preview full-width" aria-labelledby="meet-section-title">
                 <h2 id="meet-section-title">Mød os</h2>
