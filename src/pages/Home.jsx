@@ -16,6 +16,7 @@ export default function Home() {
     useEffect(() => {
         const bgImg = new Image();
         bgImg.src = groupImgSrc;
+        bgImg.setAttribute("fetchpriority", "high");
         bgImg.onload = () => {
             console.log("YAY");
             document.querySelector("section.hero").classList.remove("loading");
